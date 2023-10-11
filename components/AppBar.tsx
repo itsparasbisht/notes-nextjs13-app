@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BiNote } from "react-icons/bi";
 
 export default function AppBar() {
   function generateDate() {
@@ -46,7 +47,7 @@ export default function AppBar() {
             <input
               type="text"
               placeholder="search your notes…"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full focus:outline-none"
             />
             <button className="btn btn-square">
               <svg
@@ -66,7 +67,10 @@ export default function AppBar() {
             </button>
           </div>
         </div>
-        <h5 className="text-gray-400">{generateDate()}</h5>
+        <h5 className="text-gray-400 sm:hidden md:visible">{generateDate()}</h5>
+        <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md">
+          New Note <BiNote className="text-2xl" />
+        </button>
       </div>
       <div className="divider"></div>
     </header>
